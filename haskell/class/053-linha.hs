@@ -12,3 +12,6 @@ isVertical r | fst (fst r) == fst (snd r) = True
              | otherwise = False
 
 pontoY :: Float -> Reta -> Float
+pontoY x ((x1, y1), (x2, y2))
+    | (x1 == x2) = read "Infinity"
+    | otherwise = (x - x1) * (y2 - y1) / (x2 - x1)
