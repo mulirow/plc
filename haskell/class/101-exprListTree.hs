@@ -34,6 +34,12 @@ depth :: Tree t -> Int
 depth NilT = 0
 depth (Node root left right) = max (depth left) (depth right) + 1
 
+diameter :: Ord t => Tree t -> Int
+diameter NilT = 0
+diameter (Node root left right) = max (dleft + dright + 1) (max (diameter left) (diameter right))
+    where dleft = depth left
+          dright = depth right
+
 collapse :: Tree t -> [t]
 collapse NilT = []
 collapse (Node root left right) = [root] ++ collapse left ++ collapse right
