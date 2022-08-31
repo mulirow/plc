@@ -1,4 +1,4 @@
-modLst [] = []
+modLst [] = [1]
 modLst xs = (head (xs) + 1) : (tail (xs))
 
 somarListas :: [Int] -> [Int] -> [Int]
