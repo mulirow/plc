@@ -1,11 +1,15 @@
 public class Conta{
-    private String numero;
+    private static int numero = 0;
     private double saldo;
 
-    public Conta(String numeroInicial,
-                 double saldoInicial){
-        numero = numeroInicial;
-        saldo = saldoInicial;
+    public Conta(){
+        this.numero = Conta.defCod();
+        this.saldo = saldo;
+    }
+
+    private static int defCod(){
+        numero += 1;
+        return numero;
     }
 
     public void creditar(double valor){
@@ -20,7 +24,7 @@ public class Conta{
         return saldo;
     }
 
-    public String getNumero(){
+    public int getNumero(){
         return numero;
     }
 }

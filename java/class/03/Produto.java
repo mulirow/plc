@@ -1,7 +1,27 @@
 public class Produto{
+    private static int cod = 0;
     private String desc;
     private double value;
     private int stock;
+
+    public Produto(String desc, double value, int stock){
+        this.cod = Produto.getCod();
+        this.desc = desc;
+        this.value = value;
+        this.stock = stock;
+    }
+
+    public Produto(String desc, double value){
+        this.cod = Produto.getCod();
+        this.desc = desc;
+        this.value = value;
+        this.stock = 0;
+    }
+
+    private static getCod(){
+        cod += 1;
+        return cod;
+    }
 
     public void setDesc(String description){
         desc = description;

@@ -1,9 +1,11 @@
 public class Programa {
     public static void main(String[] args){
-        Conta c = new Conta("123-X", 8.0);
-        c.creditar(10.0);
-        c.debitar(5.0);
-        System.out.print("Conta "+c.getNumero());
-        System.out.print(" saldo "+c.getSaldo());
+        Poupanca p = new Poupanca();
+        Poupanca p2 = new Poupanca();
+        p.creditar(10.0);
+        p.renderJuros(0.15);
+        p.debitar(5.0);
+        System.out.print("Poupanca "+p.getNumero());
+        System.out.print(" saldo "+p.getSaldo() + "\n");
     }
 }
