@@ -12,21 +12,28 @@ public class Banco {
         index++;
     }
 
-    public void creditar(int num, double val) {
-        for (int i = 0; i < arr.length; i++) {
-            if (num == arr[i].getNumero()) {
-                arr[i].creditar(val);
-                return;
+    public Conta procurarConta(int num) {
+        for (int i = 0; i < index; i++) {
+            if(arr[i].getNumero() == num){
+                return arr[i];
             }
         }
+        throw new RuntimeException("Account not found.");
+    }
+
+    public void creditar(int num, double val) {
+        Conta acc = this.procurarConta(num);
+        acc.creditar(val);
     }
 
     public void debitar(int num, double val) {
-        for (int i = 0; i < arr.length; i++) {
-            if (int num == arr[i].getNumero()) {
-                arr[i].debitar(val);
-                return;
-            }
+        Conta acc = this.procurarConta(num);
+        acc.creditar(val);
+    }
+
+    public double getSaldo(int num){
+        Conta acc = this.procurarConta(num);
+        return acc.getSaldo();
         }
     }
 
