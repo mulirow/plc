@@ -47,11 +47,19 @@ public class Banco {
             throw new RuntimeException("Not a savings account.");
     }
 
-    public double getSaldo(int num){
-        for (int i = 0; i < arr.length; i++) {
-            if (int num == arr[i].getNumero()) {
-                return arr[i].getSaldo();
-            }
+    public void renderBonus(int num){
+        Conta acc = this.procurarConta(num);
+        if (acc instanceof ContaEspecial){
+            ((ContaEspecial) acc).renderBonus();
         }
+        else
+            throw new RuntimeException("Not a special account.");
+    }
+
+    public void transferir(int contaDeb, int contaCred, double val){
+        Conta accDeb = this.procurarConta(contaDeb);
+        Conta accCred = this.procurarConta(contaCred);
+        accDeb.debitar(val);
+        accCred.creditar(val);
     }
 }
