@@ -1,15 +1,16 @@
 public class Conta{
-    private static int numero = 0;
+    private int numero;
+    private static int prox = -1;
     private double saldo;
 
     public Conta(){
         this.numero = Conta.defCod();
-        this.saldo = saldo;
+        this.saldo = 0;
     }
 
     private static int defCod(){
-        numero += 1;
-        return numero;
+        prox += 1;
+        return prox;
     }
 
     public void creditar(double valor){
