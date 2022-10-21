@@ -3,13 +3,13 @@ public class Banco {
     private int index;
 
     public Banco() {
-        this.arr = new Conta()[100];
+        this.arr = new Conta[10];
         this.index = 0;
     }
 
     public void cadastrar(Conta c) {
-        this.arr[index] = c;
-        this.index++;
+        arr[index] = c;
+        index++;
     }
 
     public void creditar(int num, double val) {
