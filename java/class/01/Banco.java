@@ -1,10 +1,12 @@
 public class Banco {
     private Conta[] arr;
     private int index;
+    private double taxaJuros;
 
     public Banco() {
         this.arr = new Conta[10];
         this.index = 0;
+        this.taxaJuros = 0.01;
     }
 
     public void cadastrar(Conta c) {
@@ -34,7 +36,15 @@ public class Banco {
     public double getSaldo(int num){
         Conta acc = this.procurarConta(num);
         return acc.getSaldo();
+    }
+
+    public void renderJuros(int num){
+        Conta acc = this.procurarConta(num);
+        if (acc instanceof Poupanca){
+            ((Poupanca) acc).renderJuros(taxaJuros);
         }
+        else
+            throw new RuntimeException("Not a savings account.");
     }
 
     public double getSaldo(int num){
