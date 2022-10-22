@@ -1,11 +1,10 @@
 public class ContaEspecial extends Conta {
     private double bonus;
-    private double taxa;
+    private static final double taxa = 0.01;
 
     public ContaEspecial(){
         super();
         this.bonus = 0.0;
-        this.taxa = 0.01;
     }
 
     public void renderBonus(){
