@@ -1,7 +1,4 @@
 public class Conta extends ContaAbstrata{
-    private int numero;
-    private double saldo;
-
     public Conta(){
         super();
     }
