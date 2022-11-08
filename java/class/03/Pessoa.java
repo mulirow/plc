@@ -16,14 +16,14 @@ public class Pessoa {
     }
 
     public static void main(String[] args){
-        Scanner in = new Scanner(System.in);
+        try (Scanner in = new Scanner(System.in)) {
+            System.out.println("Digite o nome completo: ");
+            Pessoa p = new Pessoa(in.nextLine());
 
-        System.out.println("Digite o nome completo: ");
-        Pessoa p = new Pessoa(in.nextLine());
+            String nomes[] = p.getNome().split(" ");
 
-        String nomes[] = p.getNome().split(" ");
-
-        System.out.println("Primeiro nome: " + nomes[0]);
-        System.out.println("Segundo nome: " + nomes[nomes.length - 1]);
+            System.out.println("Primeiro nome: " + nomes[0]);
+            System.out.println("Segundo nome: " + nomes[nomes.length - 1]);
+        }
     }
 }

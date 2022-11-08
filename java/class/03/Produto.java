@@ -5,20 +5,20 @@ public class Produto{
     private int stock;
 
     public Produto(String desc, double value, int stock){
-        this.cod = Produto.getCod();
+        cod = Produto.getCod();
         this.desc = desc;
         this.value = value;
         this.stock = stock;
     }
 
     public Produto(String desc, double value){
-        this.cod = Produto.getCod();
+        cod = Produto.getCod();
         this.desc = desc;
         this.value = value;
         this.stock = 0;
     }
 
-    private static getCod(){
+    private static int getCod(){
         cod += 1;
         return cod;
     }

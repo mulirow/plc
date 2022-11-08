@@ -18,6 +18,6 @@ public class ContaEspecial extends Conta {
 
     public void creditar(double valor){
         super.creditar(valor);
-        this.bonus += valor * this.taxa;
+        this.bonus += valor * taxa;
     }
 }
